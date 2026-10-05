@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Crónicas Dobermann</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@400;500;600;700;800;900&family=Source+Serif+4:ital,wght@0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<link rel="stylesheet" href="styles.css">
+
+<div class="progress-track" aria-hidden="true"><div class="progress-fill" id="progressFill"></div></div>
+
+<nav class="chapter-nav" id="chapterNav" aria-label="Capítulos">
+  <a href="#hero" class="nav-dot" data-target="hero"><span class="dot"></span><span class="nav-label">Portada</span></a>
+  <a href="#origen" class="nav-dot" data-target="origen"><span class="dot"></span><span class="nav-label">I · Origen</span></a>
+  <a href="#anatomia" class="nav-dot" data-target="anatomia"><span class="dot"></span><span class="nav-label">II · Anatomía</span></a>
+  <a href="#genetica" class="nav-dot" data-target="genetica"><span class="dot"></span><span class="nav-label">III · Genética</span></a>
+  <a href="#personalidad" class="nav-dot" data-target="personalidad"><span class="dot"></span><span class="nav-label">IV · Personalidad</span></a>
+  <a href="#cuidados" class="nav-dot" data-target="cuidados"><span class="dot"></span><span class="nav-label">V · Cuidados</span></a>
+  <a href="#cierre" class="nav-dot" data-target="cierre"><span class="dot"></span><span class="nav-label">VI · Legado</span></a>
+</nav>
+
+<main>
+
+  <section id="hero" class="hero">
+    <canvas class="ember-canvas" id="emberCanvas" aria-hidden="true"></canvas>
+
+    <svg class="hero-skyline" viewBox="0 0 1200 160" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <g fill="var(--char)" stroke="var(--rust-dim)" stroke-width="1.5">
+        <rect x="0" y="90" width="95" height="70"/>
+        <rect x="95" y="45" width="65" height="115"/>
+        <rect x="160" y="102" width="55" height="58"/>
+        <polygon points="160,102 187.5,84 215,102"/>
+        <rect x="215" y="22" width="115" height="138"/>
+        <rect x="330" y="72" width="58" height="88"/>
+        <rect x="392" y="55" width="34" height="105"/>
+        <polygon points="388,55 409,10 430,55"/>
+        <rect x="430" y="88" width="82" height="72"/>
+        <rect x="512" y="58" width="64" height="102"/>
+        <rect x="576" y="118" width="48" height="42"/>
+        <polygon points="576,118 600,100 624,118"/>
+        <rect x="624" y="76" width="98" height="84"/>
+        <rect x="722" y="38" width="54" height="122"/>
+        <rect x="776" y="68" width="70" height="92"/>
+        <rect x="846" y="112" width="50" height="30"/>
+        <polygon points="846,112 871,94 896,112"/>
+        <rect x="896" y="12" width="118" height="148"/>
+        <rect x="1014" y="82" width="62" height="78"/>
+        <rect x="1076" y="62" width="78" height="98"/>
+        <rect x="1154" y="98" width="46" height="62"/>
+      </g>
+    </svg>
+
+    <div class="hero-fog fog-1"></div>
+    <div class="hero-fog fog-2"></div>
+
+    <svg class="hero-lamp" viewBox="0 0 60 300" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <circle class="lamp-glow" cx="30" cy="46" r="30" fill="url(#glowGrad)"/>
+      <defs>
+        <radialGradient id="glowGrad" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="rgba(232,162,60,0.55)"/>
+          <stop offset="55%" stop-color="rgba(232,162,60,0.16)"/>
+          <stop offset="100%" stop-color="rgba(232,162,60,0)"/>
+        </radialGradient>
+      </defs>
+      <rect x="18" y="34" width="24" height="26" rx="2" fill="var(--char)" stroke="var(--rust-dim)" stroke-width="1.5"/>
+      <rect x="24" y="24" width="12" height="10" fill="var(--char)" stroke="var(--rust-dim)" stroke-width="1.5"/>
+      <circle cx="30" cy="46" r="6" fill="var(--amber)" opacity="0.9"/>
+      <rect x="27.5" y="60" width="5" height="240" fill="var(--char)" stroke="var(--rust-dim)" stroke-width="1.2"/>
+      <rect x="14" y="296" width="32" height="6" rx="1.5" fill="var(--char)" stroke="var(--rust-dim)" stroke-width="1.2"/>
+    </svg>
+
+    <div class="hero-content" id="heroContent">
+      <div class="hero-art">
+        <img class="hero-art-img" src="images/hero_walk.gif" alt="Dobermann caminando, animación de referencia en 3D" loading="eager">
+      </div>
+      <p class="eyebrow reveal in">Una narrativa visual interactiva</p>
+      <h1 class="reveal in">DOBER<span>MANN</span></h1>
+      <p class="sub reveal in">De la vara de un recaudador de impuestos en la Alemania de 1890 a la sombra leal que hoy duerme a los pies de miles de familias. Esta es la historia completa de la raza: origen, cuerpo, temperamento y los cuidados que le debemos.</p>
+      <div class="scroll-cue">
+        <span>Desliza para empezar</span>
+        <svg viewBox="0 0 14 20"><path d="M7 1 V18 M2 13 L7 18 L12 13" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+    </div>
+  </section>
+
+  <div class="container">
+
+    <section id="origen" class="chapter" data-chapter="1">
+      <div class="chapter-head reveal"><span class="chapter-num">I</span><h2>Origen</h2></div>
+      <p class="lede reveal">El Dobermann nació de una necesidad muy concreta: un hombre que cobraba impuestos en pueblos alemanes necesitaba protección, y decidió criarla él mismo.</p>
+
+      <div class="origin-visual reveal">
+        <div class="origin-card origin-card--photo">
+          <div class="origin-photo-frame">
+            <img class="origin-photo-img" src="images/karl_friedrich.png" alt="Fotografía de época de Karl Friedrich Louis Dobermann">
+          </div>
+          <p class="origin-caption">Karl Friedrich Louis Dobermann<br><span>Apolda, 1834 – 1894 · fotografía de época</span></p>
+        </div>
+        <div class="origin-card origin-card--map" id="apoldaMapCard">
+          <button class="map-interactive" id="apoldaMapBtn" type="button" aria-expanded="false" aria-controls="apoldaMapDetail">
+            <svg viewBox="0 0 170 170" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Mapa esquemático señalando Apolda, en Turingia, y las ciudades cercanas">
+              <circle cx="85" cy="85" r="78" fill="none" stroke="var(--line)" stroke-width="1" stroke-dasharray="2 4"/>
+              <circle cx="85" cy="85" r="52" fill="none" stroke="var(--line)" stroke-width="1" stroke-dasharray="2 4"/>
+              <circle cx="85" cy="85" r="26" fill="none" stroke="var(--line)" stroke-width="1" stroke-dasharray="2 4"/>
+              <line x1="85" y1="3" x2="85" y2="13" stroke="var(--rust-dim)" stroke-width="1.3"/>
+              <text x="85" y="23" text-anchor="middle" class="map-city-label" fill="var(--rust-text)">N</text>
+              <line x1="85" y1="157" x2="85" y2="167" stroke="var(--rust-dim)" stroke-width="1.3"/>
+              <line x1="3" y1="85" x2="13" y2="85" stroke="var(--rust-dim)" stroke-width="1.3"/>
+              <line x1="157" y1="85" x2="167" y2="85" stroke="var(--rust-dim)" stroke-width="1.3"/>
+
+              <circle class="map-city-dot" cx="52" cy="80" r="2.6"/>
+              <text x="46" y="71" text-anchor="middle" class="map-city-label">Weimar</text>
+              <circle class="map-city-dot" cx="25" cy="92" r="2.2" opacity="0.75"/>
+              <text x="25" y="108" text-anchor="middle" class="map-city-label">Erfurt</text>
+              <circle class="map-city-dot" cx="124" cy="94" r="2.6"/>
+              <text x="130" y="110" text-anchor="middle" class="map-city-label">Jena</text>
+
+              <circle class="map-pulse" cx="85" cy="85" r="9" fill="var(--rust)" opacity="0.35"/>
+              <circle cx="85" cy="85" r="6.5" fill="var(--amber)" stroke="var(--ink)" stroke-width="1.5"/>
+            </svg>
+          </button>
+          <p class="origin-caption">Apolda, Turingia<br><span>Alemania central</span></p>
+          <div class="map-toggle-hint" id="apoldaMapToggle">Toca el mapa <span class="chev">▾</span></div>
+          <div class="map-detail" id="apoldaMapDetail">
+            <div class="map-detail-inner">
+              <p>Apolda está en el estado de Turingia, en el centro de Alemania: a unos 9 km de Weimar, 20 km de Jena y 30 km de Erfurt. En el siglo XIX era conocida por sus fundiciones de campanas y su industria textil — el mismo pueblo donde Dobermann reclutó a sus primeros perros guardianes.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline reveal">
+        <div class="tl-node">
+          <div class="tl-year">1834</div>
+          <div class="tl-title">Nace Karl Friedrich Louis Dobermann</div>
+          <div class="tl-body"><div class="tl-body-inner"><p>Nace en Apolda, Turingia (Alemania). Con los años trabajará como recaudador de impuestos, guarda nocturno y encargado de la perrera municipal — tres oficios peligrosos que comparten una misma necesidad: un perro de confianza a su lado.</p></div></div>
+        </div>
+        <div class="tl-node">
+          <div class="tl-year">c. 1860 – 1880</div>
+          <div class="tl-title">Selecciona a los más fuertes</div>
+          <div class="tl-body"><div class="tl-body-inner"><p>Desde su puesto en la perrera de Apolda, Dobermann elige a los ejemplares más fuertes, intimidantes e inteligentes para que lo acompañen en sus rondas nocturnas cobrando impuestos, a menudo entre gente que no quería pagarle.</p></div></div>
+        </div>
+        <div class="tl-node">
+          <div class="tl-year">1863</div>
+          <div class="tl-title">Primera aparición pública</div>
+          <div class="tl-body"><div class="tl-body-inner">
+            <div class="tl-photo-frame">
+              <img class="tl-photo-img" src="images/timeline_1863.jpg" alt="Fotomontaje humorístico de época: un caballero con sombrero de copa junto a una figura con cabeza de Dobermann, ambos vestidos de etiqueta">
+            </div>
+            <p class="tl-photo-caption">Fotomontaje de época — el humor victoriano también le hizo un lugar a la raza.</p>
+            <p>Los primeros ejemplares se muestran en el mercado de perros de Apolda. No existe un registro genealógico exacto de los cruces que usó: se cree que combinó Pastor Alemán, Rottweiler, Pinscher Alemán y Weimaraner.</p>
+          </div></div>
+        </div>
+        <div class="tl-node">
+          <div class="tl-year">1894</div>
+          <div class="tl-title">Muere el creador, nace el club</div>
+          <div class="tl-body"><div class="tl-body-inner"><p>Tras la muerte de Dobermann, Otto Göller — un fabricante de licores aficionado a la raza — funda el primer club oficial y ayuda a fijar por escrito el estándar que hasta entonces solo existía en la práctica.</p></div></div>
+        </div>
+        <div class="tl-node">
+          <div class="tl-year">1897</div>
+          <div class="tl-title">Debut en el ring de exhibición</div>
+          <div class="tl-body"><div class="tl-body-inner"><p>La raza hace su presentación formal en exhibiciones caninas. Poco después, criadores cruzan la línea con Manchester Terrier y Galgo para afinar la silueta atlética sin perder el temperamento de guardián.</p></div></div>
+        </div>
+        <div class="tl-node">
+          <div class="tl-year">1908</div>
+          <div class="tl-title">Reconocimiento internacional</div>
+          <div class="tl-body"><div class="tl-body-inner"><p>El American Kennel Club reconoce oficialmente la raza. En Norteamérica pierde la segunda "n" del apellido de su creador y pasa a llamarse "Doberman Pinscher"; en el resto del mundo conserva el nombre completo, "Dobermann".</p></div></div>
+        </div>
+        <div class="tl-node">
+          <div class="tl-year">1944</div>
+          <div class="tl-title">Centinelas en la batalla de Guam</div>
+          <div class="tl-body"><div class="tl-body-inner"><p>El Cuerpo de Marines de EE. UU. despliega Dobermans como centinelas y mensajeros durante la Segunda Guerra Mundial. Veinticinco mueren en la batalla de Guam y hoy son honrados con un monumento en la isla.</p></div></div>
+        </div>
+      </div>
+
+      <div class="lineage reveal">
+        <div class="lineage-label">Genealogía probable</div>
+        <div class="lineage-grid">
+          <div class="lineage-card">
+            <div class="lineage-photo-frame">
+              <img class="lineage-photo-img" src="images/lineage_pastor_aleman.jpg" alt="Pastor Alemán">
+            </div>
+            <p class="lineage-card-name">Pastor Alemán</p>
+          </div>
+          <div class="lineage-card">
+            <div class="lineage-photo-frame">
+              <img class="lineage-photo-img" src="images/lineage_rottweiler.jpg" alt="Rottweiler">
+            </div>
+            <p class="lineage-card-name">Rottweiler</p>
+          </div>
+          <div class="lineage-card">
+            <div class="lineage-photo-frame">
+              <img class="lineage-photo-img" src="images/lineage_pinscher_aleman.jpg" alt="Pinscher Alemán">
+            </div>
+            <p class="lineage-card-name">Pinscher Alemán</p>
+          </div>
+          <div class="lineage-card">
+            <div class="lineage-photo-frame">
+              <img class="lineage-photo-img" src="images/lineage_weimaraner.jpg" alt="Weimaraner">
+            </div>
+            <p class="lineage-card-name">Weimaraner</p>
+          </div>
+          <div class="lineage-card">
+            <div class="lineage-photo-frame">
+              <img class="lineage-photo-img" src="images/lineage_manchester_terrier.jpg" alt="Manchester Terrier">
+            </div>
+            <p class="lineage-card-name">Manchester Terrier</p>
+          </div>
+          <div class="lineage-card">
+            <div class="lineage-photo-frame">
+              <img class="lineage-photo-img" src="images/lineage_galgo_ingles.jpg" alt="Galgo Inglés">
+            </div>
+            <p class="lineage-card-name">Galgo Inglés</p>
+          </div>
+        </div>
+        <p class="lineage-note">Ningún libro de registro documentó los cruces originales: esta lista se reconstruye a partir de rasgos físicos y de testimonios de criadores de la época.</p>
+      </div>
+    </section>
+
+    <section id="anatomia" class="chapter" data-chapter="2">
+      <div class="chapter-head reveal"><span class="chapter-num">II</span><h2>Anatomía</h2></div>
+      <p class="lede reveal">Un cuerpo diseñado por y para el trabajo: compacto, musculoso y sin un gramo de exceso. Así lo definió el estándar de la raza.</p>
+
+      <div class="stat-grid reveal">
+        <div class="stat-cell">
+          <div class="stat-label">Altura — macho</div>
+          <div class="stat-value">68–72 <small>cm</small></div>
+        </div>
+        <div class="stat-cell">
+          <div class="stat-label">Altura — hembra</div>
+          <div class="stat-value">63–68 <small>cm</small></div>
+        </div>
+        <div class="stat-cell">
+          <div class="stat-label">Peso — macho</div>
+          <div class="stat-value">40–45 <small>kg</small></div>
+        </div>
+        <div class="stat-cell">
+          <div class="stat-label">Peso — hembra</div>
+          <div class="stat-value">32–35 <small>kg</small></div>
+        </div>
+        <div class="stat-cell">
+          <div class="stat-label">Esperanza de vida</div>
+          <div class="stat-value">10–12 <small>años</small></div>
+          <div class="stat-note">Varía según el estudio: 11.2 años de media en el Reino Unido.</div>
+        </div>
+        <div class="stat-cell">
+          <div class="stat-label">Ranking de inteligencia</div>
+          <div class="stat-value">5.º <small>de ~140 razas</small></div>
+          <div class="stat-note">Según la escala de obediencia y trabajo de Stanley Coren.</div>
+        </div>
+      </div>
+
+      <div class="anatomy-visual reveal">
+        <div class="viewer3d-wrap" id="viewer3dWrap">
+          <div class="illus-card">
+            <img id="dogPhoto" class="illus-photo" data-photo-rojo="images/dog_jump_rojo.jpg" data-photo-azul="images/dog_jump_azul.jpg" data-photo-isabela="images/dog_jump_isabela.jpg" src="images/dog_jump_negro.jpg" alt="Render 3D realista de un Doberman saltando, mostrando su cuerpo completo, con puntos interactivos sobre cada caracteristica">
+          </div>
+          <div class="viewer3d-hint">Toca los puntos</div>
+          <button class="view-full-btn" id="viewFullBtn" type="button" aria-label="Ver foto en pantalla completa">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M8 3H5a2 2 0 0 0-2 2v3"/>
+              <path d="M16 3h3a2 2 0 0 1 2 2v3"/>
+              <path d="M8 21H5a2 2 0 0 1-2-2v-3"/>
+              <path d="M16 21h3a2 2 0 0 0 2-2v-3"/>
+            </svg>
+          </button>
+          <button class="hotspot" id="hs-cabeza" data-key="cabeza" aria-label="1. Cabeza" style="left:31.6%;top:27.3%;">1</button>
+          <button class="hotspot" id="hs-orejas" data-key="orejas" aria-label="2. Orejas" style="left:33.9%;top:13.5%;">2</button>
+          <button class="hotspot" id="hs-cuello" data-key="cuello" aria-label="3. Cuello" style="left:38.5%;top:35.4%;">3</button>
+          <button class="hotspot" id="hs-dorso" data-key="dorso" aria-label="4. Dorso" style="left:48.6%;top:31.3%;">4</button>
+          <button class="hotspot" id="hs-pecho" data-key="pecho" aria-label="5. Pecho" style="left:40.8%;top:46.8%;">5</button>
+          <button class="hotspot" id="hs-abdomen" data-key="abdomen" aria-label="6. Abdomen" style="left:51.9%;top:54.9%;">6</button>
+          <button class="hotspot" id="hs-traseros" data-key="traseros" aria-label="7. Cuartos traseros" style="left:57.8%;top:50.8%;">7</button>
+          <button class="hotspot" id="hs-cola" data-key="cola" aria-label="8. Cola" style="left:61.5%;top:39.5%;">8</button>
+          <button class="hotspot" id="hs-patas" data-key="patas" aria-label="9. Patas" style="left:35.2%;top:60.6%;">9</button>
+        </div>
+
+        <div class="anatomy-controls">
+          <div class="hotspot-detail" id="hotspotDetail"><strong>Ilustración interactiva</strong>Toca los puntos ámbar sobre el dibujo para descubrir por qué el cuerpo del Dobermann tiene esa forma.</div>
+          <div class="colorway">
+            <div class="colorway-label">Toca un color para vestirlo</div>
+            <div class="swatch-row" id="swatchRow">
+              <button class="swatch active" data-coat="#141210" data-fuego="#b5794a" data-color="Negro y fuego" data-desc="El color más común y el que popularizó la raza: negro intenso con marcas de un rojizo cálido ('fuego') sobre hocico, pecho, patas y cejas.">
+                <span class="swatch-chip" style="background:#141210;"></span>
+                <span class="swatch-name">Negro y fuego</span>
+              </button>
+              <button class="swatch" data-coat="#5a2f1e" data-fuego="#d19a5f" data-color="Rojo y fuego" data-desc="Un marrón rojizo profundo combinado con las mismas marcas de fuego, ligeramente más claras. Es el segundo color más frecuente.">
+                <span class="swatch-chip" style="background:#5a2f1e;"></span>
+                <span class="swatch-name">Rojo y fuego</span>
+              </button>
+              <button class="swatch" data-coat="#4a5560" data-fuego="#c9a978" data-color="Azul y fuego" data-desc="Un gris azulado resultado de un gen diluyente sobre el negro. Es menos común y en algunas líneas se asocia a mayor sensibilidad de piel.">
+                <span class="swatch-chip" style="background:#4a5560;"></span>
+                <span class="swatch-name">Azul y fuego</span>
+              </button>
+              <button class="swatch" data-coat="#a68a6d" data-fuego="#e2c49a" data-color="Isabela y fuego" data-desc="También llamado 'fawn', es la dilución del rojo: un beige pálido casi champán. Es el color más raro de los cuatro.">
+                <span class="swatch-chip" style="background:#a68a6d;"></span>
+                <span class="swatch-name">Isabela y fuego</span>
+              </button>
+            </div>
+            <div class="swatch-detail" id="swatchDetail">Negro y fuego — el color más común y el que popularizó la raza: negro intenso con marcas de un rojizo cálido ("fuego") sobre hocico, pecho, patas y cejas.</div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="trait-block reveal">
+        <div class="colorway-label">Ficha de características</div>
+        <div class="trait-grid">
+          <div class="trait-card"><h4>Cabeza y expresión</h4><p>Hocico largo y profundo con labios firmes, un "stop" bien marcado y ojos almendrados casi negros: la mordida cierra en tijera con 42 dientes.</p></div>
+          <div class="trait-card"><h4>Orejas</h4><p>De nacimiento son caídas; el corte quirúrgico para pararlas es una tradición de exhibición cada vez más restringida por ley.</p></div>
+          <div class="trait-card"><h4>Cuello</h4><p>Arqueado, musculoso y seco, se afina con elegancia desde los hombros hasta la nuca — una de las líneas más reconocibles de la raza.</p></div>
+          <div class="trait-card"><h4>Dorso</h4><p>Corto, firme y con una línea superior recta que no se hunde ni se arquea: es la base de una zancada eficiente.</p></div>
+          <div class="trait-card"><h4>Pecho profundo</h4><p>La caja torácica es profunda y estrecha, ideal para correr — pero ese mismo pecho predispone al Dobermann a la torsión gástrica (bloat).</p></div>
+          <div class="trait-card"><h4>Abdomen recogido</h4><p>La cintura se estrecha notablemente detrás de las costillas ("tucked-up"): rasgo de un perro criado para la velocidad, no para el fondo.</p></div>
+          <div class="trait-card"><h4>Cuartos traseros</h4><p>Muslos potentes y bien angulados que funcionan como el motor de la raza: dan el impulso para acelerar y saltar.</p></div>
+          <div class="trait-card"><h4>Patas y "calcetines"</h4><p>Delanteras rectas como columnas, con hueso fuerte. Los puntos color fuego aparecen por un gen de color independiente del tono base.</p></div>
+          <div class="trait-card"><h4>Cola</h4><p>Nace larga; tradicionalmente se mochaba a los pocos días de vida. Hoy esa práctica está prohibida en buena parte de Europa y Oceanía.</p></div>
+        </div>
+      </div>
+
+      <div class="crop-note reveal">
+        <h4>Orejas y cola: una práctica en retroceso</h4>
+        <p>Tradicionalmente las orejas se recortaban y la cola se mochaba a los pocos días de nacer, para lograr el perfil erguido y compacto del estándar clásico. Esa norma está cambiando región por región:</p>
+        <div class="status-row">
+          <span class="status-chip banned">Unión Europea — prohibido</span>
+          <span class="status-chip banned">Australia — prohibido</span>
+          <span class="status-chip">Reino Unido — prohibido en exhibición</span>
+          <span class="status-chip standard">EE. UU. (AKC) — aún parte del estándar</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="genetica" class="chapter" data-chapter="3">
+      <div class="chapter-head reveal"><span class="chapter-num">III</span><h2>Genética y evolución</h2></div>
+      <p class="lede reveal">Cada rasgo del capítulo anterior — el color, la silueta, hasta el riesgo cardíaco — está escrito en el ADN. Así es como se leen esos genes, y cómo un siglo de cría dividió a la raza en dos caminos distintos.</p>
+
+      <div class="reveal">
+        <div class="colorway-label" style="margin-top:44px;">El código del color: dos genes, cuatro resultados</div>
+        <div class="gene-grid">
+          <div class="gene-cell corner">Locus B (TYRP1) ↓<br>Locus D (MLPH) →</div>
+          <div class="gene-cell colhead">Color pleno (D_)</div>
+          <div class="gene-cell colhead">Diluido (dd)</div>
+
+          <div class="gene-cell rowhead">Negro (B_)</div>
+          <div class="gene-cell"><div class="gene-icon"><svg viewBox="0 0 60 46" xmlns="http://www.w3.org/2000/svg"><path d="M13 15 L17 3 L24 14 Z" fill="#141210"/><circle cx="24" cy="24" r="13" fill="#141210"/><ellipse cx="40" cy="27" rx="9" ry="6" fill="#141210"/><ellipse cx="42" cy="30" rx="4.5" ry="3" fill="#b5794a"/><circle cx="29" cy="22" r="1.6" fill="var(--amber)"/></svg></div><div class="gene-name">Negro y fuego</div></div>
+          <div class="gene-cell"><div class="gene-icon"><svg viewBox="0 0 60 46" xmlns="http://www.w3.org/2000/svg"><path d="M13 15 L17 3 L24 14 Z" fill="#4a5560"/><circle cx="24" cy="24" r="13" fill="#4a5560"/><ellipse cx="40" cy="27" rx="9" ry="6" fill="#4a5560"/><ellipse cx="42" cy="30" rx="4.5" ry="3" fill="#c9a978"/><circle cx="29" cy="22" r="1.6" fill="var(--amber)"/></svg></div><div class="gene-name">Azul y fuego</div></div>
+
+          <div class="gene-cell rowhead">Rojo (bb)</div>
+          <div class="gene-cell"><div class="gene-icon"><svg viewBox="0 0 60 46" xmlns="http://www.w3.org/2000/svg"><path d="M13 15 L17 3 L24 14 Z" fill="#5a2f1e"/><circle cx="24" cy="24" r="13" fill="#5a2f1e"/><ellipse cx="40" cy="27" rx="9" ry="6" fill="#5a2f1e"/><ellipse cx="42" cy="30" rx="4.5" ry="3" fill="#d19a5f"/><circle cx="29" cy="22" r="1.6" fill="var(--amber)"/></svg></div><div class="gene-name">Rojo y fuego</div></div>
+          <div class="gene-cell"><div class="gene-icon"><svg viewBox="0 0 60 46" xmlns="http://www.w3.org/2000/svg"><path d="M13 15 L17 3 L24 14 Z" fill="#a68a6d"/><circle cx="24" cy="24" r="13" fill="#a68a6d"/><ellipse cx="40" cy="27" rx="9" ry="6" fill="#a68a6d"/><ellipse cx="42" cy="30" rx="4.5" ry="3" fill="#e2c49a"/><circle cx="29" cy="22" r="1.6" fill="var(--amber)"/></svg></div><div class="gene-name">Isabela y fuego</div></div>
+        </div>
+        <p class="gene-note">El gen TYRP1 decide si el pigmento base es negro o rojizo; el gen MLPH decide si ese pigmento sale "pleno" o diluido a un tono grisáceo. Un tercer gen, el Agouti (ASIP), está fijado en toda la raza: es el que dibuja los puntos "fuego" sobre cejas, hocico, pecho y patas en los cuatro colores por igual.</p>
+      </div>
+
+      <div class="lines-versus reveal">
+        <div class="colorway-label">Dos líneas, una misma raza</div>
+        <p class="gene-note" style="margin-top:10px;">Un siglo de criterios de cría distintos a cada lado del Atlántico separó al Dobermann en dos tipos reconocibles, sin que sean razas diferentes.</p>
+        <div class="versus" style="margin-top:24px;">
+          <div class="versus-col mito">
+            <div class="versus-tag">Línea americana</div>
+            <p class="versus-text">Cuerpo esbelto y elegante, cabeza en cuña más fina, temperamento más calmo. Criada bajo reglas de mercado libre orientadas al ring de exhibición.</p>
+          </div>
+          <div class="versus-div">VS</div>
+          <div class="versus-col real">
+            <div class="versus-tag">Línea europea</div>
+            <p class="versus-text">Estructura más robusta y musculosa, cabeza y mandíbula más anchas. En Europa un dog debe aprobar un test de temperamento (ZTP) antes de poder reproducirse.</p>
+          </div>
+        </div>
+        <div class="lines-bars">
+          <div>
+            <div class="lines-bar-label"><span>Nivel de energía</span><span><b>6.2</b> vs <b>7.7</b> /10</span></div>
+            <div class="lines-track"><div class="lines-seg american" style="width:62%;"></div><div class="lines-seg european" style="width:77%;"></div></div>
+          </div>
+          <div>
+            <div class="lines-bar-label"><span>Firmeza necesaria en el entrenamiento</span><span><b>4.5</b> vs <b>5.8</b> /10</span></div>
+            <div class="lines-track"><div class="lines-seg american" style="width:45%;"></div><div class="lines-seg european" style="width:58%;"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="dcm-gene-block reveal">
+        <div class="colorway-label">La genética detrás del riesgo cardíaco</div>
+        <p class="gene-note" style="margin-top:10px;max-width:620px;">La cardiomiopatía dilatada (capítulo V) está ligada a variantes en dos genes: una deleción en <strong style="color:var(--rust-text);font-weight:600;">PDK4</strong> y una variante en el gen de la <strong style="color:var(--rust-text);font-weight:600;">titina (TTN)</strong>. En un estudio sobre 48 Dobermans con DCM confirmada, así se repartían las variantes:</p>
+        <div class="dcm-stats">
+          <div class="bar-row"><span class="bar-name">Solo variante TTN</span><div class="bar-track"><div class="bar-fill" data-pct="58"></div></div><span class="bar-val">58%</span></div>
+          <div class="bar-row highlight"><span class="bar-name">Ambas variantes</span><div class="bar-track"><div class="bar-fill" data-pct="21"></div></div><span class="bar-val">21%</span></div>
+          <div class="bar-row"><span class="bar-name">Solo variante PDK4</span><div class="bar-track"><div class="bar-fill" data-pct="8.3"></div></div><span class="bar-val">8.3%</span></div>
+          <div class="bar-row"><span class="bar-name">Ninguna de las dos</span><div class="bar-track"><div class="bar-fill" data-pct="12.5"></div></div><span class="bar-val">12.5%</span></div>
+        </div>
+        <div class="chart-foot">Ya existe una prueba de ADN comercial (AKC DNA + Health) para ambas variantes, pero como algunos perros sin ninguna de las dos también desarrollan DCM, el club de la raza en EE. UU. sigue recomendando ecocardiograma y Holter periódicos por encima del test genético.</div>
+      </div>
+
+      <div class="reveal" style="margin-top:52px;">
+        <div class="colorway-label">Un cuello de botella genético</div>
+        <p class="gene-note" style="margin-top:10px;max-width:620px;">Guerras mundiales, líneas cerradas y el uso repetido de los mismos "sementales populares" redujeron la diversidad genética de la raza: estudios de la Universidad de California, Davis, encontraron menos variación en el Dobermann que en cualquier otra raza analizada, sin importar si el perro es americano, europeo o asiático.</p>
+        <div class="diversity-grid">
+          <div class="diversity-cell"><div class="diversity-value">58%+</div><div class="diversity-label">de los Dobermans europeos en un estudio presentaban DCM</div></div>
+          <div class="diversity-cell"><div class="diversity-value">~20%</div><div class="diversity-label">con signos subclínicos de hepatitis crónica</div></div>
+          <div class="diversity-cell"><div class="diversity-value">~5.5%</div><div class="diversity-label">de prevalencia estimada del síndrome de Wobbler</div></div>
+        </div>
+        <p class="gene-note">Iniciativas como el Doberman Diversity Project buscan hoy en día ejemplares de todo el mundo para ampliar ese acervo genético y frenar la acumulación de mutaciones dañinas en las próximas generaciones.</p>
+      </div>
+    </section>
+
+    <section id="personalidad" class="chapter" data-chapter="4">
+      <div class="chapter-head reveal"><span class="chapter-num">IV</span><h2>Personalidad</h2></div>
+      <p class="lede reveal">Ninguna raza carga con un malentendido tan grande como este. La ficción de Hollywood hizo el resto.</p>
+
+      <div class="guardian-visual reveal">
+        <div class="guardian-photo-frame">
+          <img class="guardian-photo-img" src="images/guardian_photo.png" alt="Retrato de un Dobermann con collar dorado, mirada calmada, en un campo de amapolas">
+        </div>
+        <p class="guardian-caption">Alerta, no agresivo</p>
+      </div>
+
+      <div class="versus reveal">
+        <div class="versus-col mito">
+          <div class="versus-tag">El mito</div>
+          <p class="versus-text">"Es un perro peligroso, agresivo por naturaleza, que ataca sin motivo."</p>
+        </div>
+        <div class="versus-div">VS</div>
+        <div class="versus-col real">
+          <div class="versus-tag">La realidad</div>
+          <p class="versus-text">Es instintivamente protector, no ofensivo: reacciona ante una amenaza percibida hacia su familia, no busca el conflicto por sí solo.</p>
+        </div>
+      </div>
+
+      <div class="trait-chips reveal">
+        <span class="trait-chip">Leal hasta el "velcro"</span>
+        <span class="trait-chip">Muy inteligente</span>
+        <span class="trait-chip">Reservado con extraños</span>
+        <span class="trait-chip">Enérgico</span>
+        <span class="trait-chip">Sensible al tono de voz</span>
+        <span class="trait-chip">Necesita socialización temprana</span>
+      </div>
+
+      <div class="chart-block reveal">
+        <div class="chart-title">Ataques mortales por raza</div>
+        <div class="chart-sub">Estudio de EE. UU., 2005–2017, sobre el total de muertes por mordedura canina registradas</div>
+        <div class="bar-row">
+          <span class="bar-name">Pit bull</span>
+          <div class="bar-track"><div class="bar-fill" data-pct="65.6"></div></div>
+          <span class="bar-val">65.6%</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-name">Rottweiler</span>
+          <div class="bar-track"><div class="bar-fill" data-pct="10.4"></div></div>
+          <span class="bar-val">10.4%</span>
+        </div>
+        <div class="bar-row highlight">
+          <span class="bar-name">Dobermann</span>
+          <div class="bar-track"><div class="bar-fill" data-pct="1.4"></div></div>
+          <span class="bar-val">1.4%</span>
+        </div>
+        <div class="chart-foot">6 de 433 muertes registradas en el periodo. En ese mismo estudio, los labradores retriever superaron a los Dobermans en número de muertes atribuidas.</div>
+      </div>
+
+      <blockquote class="quote reveal">
+        La agresividad descontrolada casi siempre es resultado de una socialización deficiente o de maltrato — no de la genética de la raza.
+        <cite>Consenso citado por criadores y etólogos caninos</cite>
+      </blockquote>
+    </section>
+
+    <section id="cuidados" class="chapter" data-chapter="5">
+      <div class="chapter-head reveal"><span class="chapter-num">V</span><h2>Cuidados y salud</h2></div>
+      <p class="lede reveal">Es una raza atlética y por lo general sana, pero con un puñado de condiciones hereditarias que todo cuidador debería conocer de antemano.</p>
+
+      <div class="care-grid reveal">
+        <div class="care-card">
+          <h4>Ejercicio</h4>
+          <p>Alta energía física y mental. Necesita paseos largos, carrera y trabajo de obediencia, agility o rastreo diarios; sin estímulo se vuelve destructivo.</p>
+        </div>
+        <div class="care-card">
+          <h4>Alimentación</h4>
+          <p>Dos comidas al día en lugar de una sola, evitando comederos elevados: reduce el riesgo de torsión gástrica. El omega-3 ayuda a las articulaciones y al corazón.</p>
+        </div>
+        <div class="care-card">
+          <h4>Pelaje</h4>
+          <p>Corto pero con muda de moderada a abundante. Cepillado regular y baños mensuales bastan para mantener la piel sana.</p>
+        </div>
+        <div class="care-card">
+          <h4>Entrenamiento</h4>
+          <p>Aprende rápido y disfruta el trabajo mental. Responde mejor al refuerzo positivo constante que a la corrección dura.</p>
+        </div>
+      </div>
+
+      <div class="age-block reveal">
+        <div class="colorway-label">Su edad en años humanos</div>
+        <p class="gene-note" style="margin-top:10px;max-width:620px;">Olvida la regla de "un año de perro son siete humanos": es un mito de los años 50 que nunca tuvo base científica. La <a href="https://www.akc.org/expert-advice/health/how-to-calculate-dog-years-to-human-years/" target="_blank" rel="noopener">fórmula que recomienda la AVMA</a> es distinta, y en una raza grande como el Dobermann la etapa senior llega antes que en un perro pequeño.</p>
+
+        <div class="stair-wrap" id="ageStair">
+          <button class="stair-step active" data-detail="Aún en pleno desarrollo sensorial y social — la fórmula anual todavía no aplica. Es la ventana más importante para la socialización temprana: todo lo que huela, escuche y toque a esta edad moldea al perro adulto.">
+            <div class="stair-age">2 meses</div>
+            <div class="stair-icon">
+              <svg viewBox="0 0 110 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M64 34 C58 36 51 46 56 57 C60 59 67 52 66 41 Z" fill="var(--char)" stroke="var(--rust-dim)" stroke-width="2" stroke-linejoin="round"/>
+                <ellipse cx="40" cy="64" rx="19" ry="15" fill="var(--char)" stroke="var(--rust-dim)" stroke-width="2"/>
+                <circle cx="68" cy="48" r="17" fill="var(--char)" stroke="var(--rust-dim)" stroke-width="2"/>
+                <ellipse cx="83" cy="53" rx="8" ry="6" fill="var(--char)" stroke="var(--rust-dim)" stroke-width="2"/>
+                <circle cx="76" cy="45" r="2" fill="var(--amber)"/>
+                <rect x="58" y="74" width="7" height="13" rx="3.5" fill="var(--char)" stroke="var(--rust-dim)" stroke-width="1.6"/>
+                <rect x="30" y="74" width="7" height="13" rx="3.5" fill="var(--char)" stroke="var(--rust-dim)" stroke-width="1.6"/>
+                <path d="M22 60 C16 58 14 52 18 48" stroke="var(--rust-dim)" stroke-width="3" fill="none" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div class="stair-platform" style="min-height:34px;">
+              <div class="stair-stage">Cachorro</div>
+              <div class="stair-human">Bebé en desarrollo</div>
+            </div>
+          </button>
+
+          <button class="stair-step" data-detail="Entra en la pubertad: aparece el 'periodo del miedo' y pone a prueba los límites aprendidos de cachorro. La constancia en el entrenamiento importa más que nunca.">
+            <div class="stair-age">6 meses</div>
+            <div class="stair-icon">
+              <svg viewBox="0 0 110 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <ellipse cx="42" cy="62" rx="22" ry="12" fill="var(--char)" stroke="var(--rust-dim)" stroke-width="2"/>
+                <circle cx="76" cy="44" r="13" fill="var(--char)" stroke="var(--rust-dim)" stroke-width="2"/>
+                <ellipse cx="90" cy="48" rx="7" ry="5" fill="var(--char)" stroke="var(--rust-dim)" stroke-width="2"/>
+                <path d="M66 30 C61 34 60 44 66 48 C70 46 70 36 66 30 Z" fill="var(--char)" stroke="var(--rust-dim)" stroke-width="1.8" stroke-linejoin="round"/>
+                <path d="M70 32 L74 16 L80 30 Z" fill="var(--char)" stroke="var(--rust-dim)" stroke-width="1.8" stroke-linejoin="round"/>
+                <circle cx="84" cy="42" r="2" fill="var(--amber)"/>
+                <rect x="64" y="72" width="6" height="18" rx="3" fill="var(--char)" stroke="var(--rust-dim)" stroke-width="1.6"/>
+                <rect x="34" y="72" width="6" height="17" rx="3" fill="var(--char)" stroke="var(--rust-dim)" stroke-width="1.6"/>
+                <path d="M20 56 C13 52 12 44 18 40" stroke="var(--rust-dim)" stroke-width="3" fill="none" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div class="stair-platform" style="min-height:52px;">
+              <div class="stair-stage">Adolescente</div>
+              <div class="stair-human">Pubertad y límites a prueba</div>
+            </div>
+          </button>
+
+          <button class="stair-step" data-detail="Físicamente ya parece un adulto, pero la madurez mental tarda hasta el tercer año. El primer año de vida equivale por sí solo a unos 15 años humanos.">
+            <div class="stair-age">1 año</div>
+            <div class="stair-icon">
+              <svg viewBox="0 0 110 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <ellipse cx="44" cy="60" rx="25" ry="11" fill="var(--char)" stroke="var(--rust-dim)" stroke-width="2"/>
+                <circle cx="80" cy="40" r="12" fill="var(--char)" stroke="var(--rust-dim)" stroke-width="2"/>
+                <ellipse cx="94" cy="44" rx="7" ry="4.5" fill="var(--char)" stroke="var(--rust-dim)" stroke-width="2"/>
+                <path d="M74 28 L77 12 L82 27 Z" fill="var(--char)" stroke="var(--rust-dim)" stroke-width="1.8" stroke-linejoin="round"/>
+                <path d="M83 27 L88 13 L91 29 Z" fill="var(--char)" stroke="var(--rust-dim)" stroke-width="1.8" stroke-linejoin="round"/>
+                <circle cx="87" cy="38" r="1.8" fill="var(--amber)"/>
+                <rect x="68" y="70" width="5.5" height="20" rx="2.5" fill="var(--char)" stroke="var(--rust-dim)" stroke-width="1.6"/>
+                <rect x="36" y="70" width="5.5" height="19" rx="2.5" fill="var(--char)" stroke="var(--rust-dim)" stroke-width="1.6"/>
+                <path d="M18 52 L9 47 L18 45 Z" fill="var(--char)" stroke="var(--rust-dim)" stroke-width="1.6" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div class="stair-platform" style="min-height:70px;">
+              <div class="stair-stage">Joven adulto</div>
+              <div class="stair-human">≈15 años humanos</div>
+            </div>
+          </button>
+
+          <button class="stair-step" data-detail="Ya es mentalmente maduro y está en su punto máximo de fuerza y resistencia. A partir de aquí, cada año de vida suma unos 5 años humanos.">
+            <div class="stair-age">3 años</div>
+            <div class="stair-icon">
+              <svg viewBox="0 0 110 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <ellipse cx="44" cy="59" rx="25" ry="12" fill="var(--char)" stroke="var(--rust-dim)" stroke-width="2"/>
+                <ellipse cx="60" cy="65" rx="8" ry="6" fill="#b5794a" opacity="0.9"/>
+                <circle cx="80" cy="40" r="12" fill="var(--char)" stroke="var(--rust-dim)" stroke-width="2"/>
+                <ellipse cx="94" cy="44" rx="7" ry="4.5" fill="var(--char)" stroke="var(--rust-dim)" stroke-width="2"/>
+                <path d="M74 28 L77 12 L82 27 Z" fill="var(--char)" stroke="var(--rust-dim)" stroke-width="1.8" stroke-linejoin="round"/>
+                <path d="M83 27 L88 13 L91 29 Z" fill="var(--char)" stroke="var(--rust-dim)" stroke-width="1.8" stroke-linejoin="round"/>
+                <circle cx="87" cy="38" r="1.8" fill="var(--amber)"/>
+                <rect x="68" y="70" width="5.5" height="20" rx="2.5" fill="var(--char)" stroke="var(--rust-dim)" stroke-width="1.6"/>
+                <rect x="36" y="70" width="5.5" height="19" rx="2.5" fill="var(--char)" stroke="var(--rust-dim)" stroke-width="1.6"/>
+                <path d="M18 50 L9 44 L19 44 Z" fill="var(--char)" stroke="var(--rust-dim)" stroke-width="1.6" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div class="stair-platform" style="min-height:92px;">
+              <div class="stair-stage">Adulto</div>
+              <div class="stair-human">≈29 años humanos</div>
+            </div>
+          </button>
+
+          <button class="stair-step" data-detail="En razas grandes como el Dobermann, la etapa senior empieza entre los 5 y 6 años — mucho antes que en un perro pequeño. Es buen momento para chequeos veterinarios más frecuentes.">
+            <div class="stair-age">7 años</div>
+            <div class="stair-icon">
+              <svg viewBox="0 0 110 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <ellipse cx="44" cy="59" rx="25" ry="12" fill="var(--char)" stroke="var(--rust-dim)" stroke-width="2"/>
+                <ellipse cx="60" cy="65" rx="8" ry="6" fill="#b5794a" opacity="0.75"/>
+                <circle cx="80" cy="42" r="12" fill="var(--char)" stroke="var(--rust-dim)" stroke-width="2"/>
+                <ellipse cx="94" cy="46" rx="7" ry="4.5" fill="var(--char)" stroke="var(--rust-dim)" stroke-width="2"/>
+                <ellipse cx="94" cy="46" rx="7" ry="4.5" fill="#c9c2b8" opacity="0.5"/>
+                <path d="M74 31 L77 17 L82 30 Z" fill="var(--char)" stroke="var(--rust-dim)" stroke-width="1.8" stroke-linejoin="round"/>
+                <path d="M83 30 L88 18 L91 32 Z" fill="var(--char)" stroke="var(--rust-dim)" stroke-width="1.8" stroke-linejoin="round"/>
+                <circle cx="87" cy="40" r="1.8" fill="var(--amber)" opacity="0.8"/>
+                <rect x="68" y="72" width="5.5" height="18" rx="2.5" fill="var(--char)" stroke="var(--rust-dim)" stroke-width="1.6"/>
+                <rect x="36" y="72" width="5.5" height="17" rx="2.5" fill="var(--char)" stroke="var(--rust-dim)" stroke-width="1.6"/>
+                <path d="M18 52 L9 47 L19 47 Z" fill="var(--char)" stroke="var(--rust-dim)" stroke-width="1.6" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div class="stair-platform" style="min-height:112px;">
+              <div class="stair-stage">Senior</div>
+              <div class="stair-human">≈49 años humanos</div>
+            </div>
+          </button>
+
+          <button class="stair-step" data-detail="Ya supera la esperanza de vida típica de la raza (10–12 años): un verdadero veterano, con canas en el hocico, articulaciones más rígidas y un paso más lento.">
+            <div class="stair-age">12 años</div>
+            <div class="stair-icon">
+              <svg viewBox="0 0 110 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <ellipse cx="48" cy="62" rx="24" ry="20" fill="var(--char)" stroke="var(--rust-dim)" stroke-width="2"/>
+                <circle cx="78" cy="36" r="12" fill="var(--char)" stroke="var(--rust-dim)" stroke-width="2"/>
+                <ellipse cx="91" cy="40" rx="6.5" ry="4.5" fill="var(--char)" stroke="var(--rust-dim)" stroke-width="2"/>
+                <ellipse cx="91" cy="40" rx="6.5" ry="4.5" fill="#c9c2b8" opacity="0.6"/>
+                <path d="M72 27 L74 15 L80 26 Z" fill="var(--char)" stroke="var(--rust-dim)" stroke-width="1.8" stroke-linejoin="round"/>
+                <circle cx="85" cy="34" r="1.7" fill="var(--amber)" opacity="0.75"/>
+                <rect x="60" y="72" width="5.5" height="16" rx="2.5" fill="var(--char)" stroke="var(--rust-dim)" stroke-width="1.6"/>
+                <path d="M22 68 C16 70 14 76 20 78" stroke="var(--rust-dim)" stroke-width="3" fill="none" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div class="stair-platform" style="min-height:132px;">
+              <div class="stair-stage">Geriátrico</div>
+              <div class="stair-human">≈74 años humanos</div>
+            </div>
+          </button>
+        </div>
+
+        <div class="age-detail" id="ageDetail">Aún en pleno desarrollo sensorial y social — la fórmula anual todavía no aplica. Es la ventana más importante para la socialización temprana: todo lo que huela, escuche y toque a esta edad moldea al perro adulto.</div>
+
+        <p class="chart-foot">Fórmula AVMA: año 1 = 15 años humanos, año 2 suma 9 más, y cada año desde el tercero suma 5. Es una guía general, no un diagnóstico: la genética, el peso y la salud individual pesan tanto como el calendario.</p>
+      </div>
+
+      <div class="file-label reveal">Expediente médico — condiciones hereditarias más relevantes</div>
+      <div class="med-file reveal">
+        <div class="med-row">
+          <button aria-expanded="false"><span class="med-name">Cardiomiopatía dilatada (DCM)</span><span class="med-tag high">Riesgo alto</span><span class="med-plus">+</span></button>
+          <div class="med-body"><div class="med-body-inner"><p>La condición más grave de la raza: el músculo cardíaco se debilita y deja de bombear con eficacia. Prevalencia estimada de 5.8% a 7.32%. Cerca de una cuarta parte de los casos muere de forma súbita e inesperada, y la mitad por insuficiencia cardíaca congestiva. Se recomienda ecocardiograma y Holter periódicos desde edad temprana.</p></div></div>
+        </div>
+        <div class="med-row">
+          <button aria-expanded="false"><span class="med-name">Enfermedad de von Willebrand</span><span class="med-tag">Hereditaria</span><span class="med-plus">+</span></button>
+          <div class="med-body"><div class="med-body-inner"><p>Un trastorno genético de la coagulación de la sangre. No suele notarse en el día a día, pero conviene hacer una prueba antes de cualquier cirugía o procedimiento invasivo.</p></div></div>
+        </div>
+        <div class="med-row">
+          <button aria-expanded="false"><span class="med-name">Torsión gástrica (bloat / GDV)</span><span class="med-tag high">Emergencia</span><span class="med-plus">+</span></button>
+          <div class="med-body"><div class="med-body-inner"><p>El pecho profundo del Dobermann lo predispone a que el estómago se dilate y, en los casos más graves, se tuerza sobre sí mismo. Es una urgencia veterinaria inmediata; comer en dos tomas y evitar el ejercicio intenso justo después de comer ayuda a prevenirla.</p></div></div>
+        </div>
+        <div class="med-row">
+          <button aria-expanded="false"><span class="med-name">Displasia de cadera</span><span class="med-tag">Baja prevalencia</span><span class="med-plus">+</span></button>
+          <div class="med-body"><div class="med-body-inner"><p>El encaje de la articulación de la cadera no es perfecto y puede derivar en artritis. La raza la presenta con menor frecuencia que otros perros grandes; mantener un peso magro y ejercicio de bajo impacto reduce el riesgo.</p></div></div>
+        </div>
+        <div class="med-row">
+          <button aria-expanded="false"><span class="med-name">Hipotiroidismo</span><span class="med-tag">~6% de casos</span><span class="med-plus">+</span></button>
+          <div class="med-body"><div class="med-body-inner"><p>Una tiroides poco activa que puede causar aumento de peso, letargo y problemas de piel. Se controla bien con medicación de por vida una vez diagnosticada.</p></div></div>
+        </div>
+        <div class="med-row">
+          <button aria-expanded="false"><span class="med-name">Trastorno compulsivo canino</span><span class="med-tag">Conductual</span><span class="med-plus">+</span></button>
+          <div class="med-body"><div class="med-body-inner"><p>Se manifiesta como chupeteo compulsivo de los flancos u otras conductas repetitivas, con un componente genético y otro de ansiedad o falta de estímulo. El enriquecimiento mental diario ayuda a prevenirlo.</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="cierre" class="chapter cierre" data-chapter="6">
+      <div class="chapter-head reveal"><span class="chapter-num">VI</span><h2>Legado</h2></div>
+      <p class="lede reveal">Del bastón de un cobrador de impuestos alemán a los brazos de una familia cualquiera, el Dobermann jamás dejó de ser lo que fue criado para ser: un guardián. Lo que cambió fue nuestra idea de a quién y qué está dispuesto a proteger. Conocerlo bien — su cuerpo, su historia y sus necesidades reales — es la mejor forma de honrar ese vínculo.</p>
+
+      <div class="sources reveal">
+        <div class="sources-label">Fuentes consultadas</div>
+        <ul>
+          <li><a href="https://www.akc.org/expert-advice/dog-breeds/doberman-pinscher-history/" target="_blank" rel="noopener">American Kennel Club — Doberman Pinscher History</a></li>
+          <li><a href="https://en.wikipedia.org/wiki/Dobermann" target="_blank" rel="noopener">Wikipedia — Dobermann</a></li>
+          <li><a href="https://www.dobermanplanet.com/are-dobermans-mean-dangerous-or-aggressive/" target="_blank" rel="noopener">Doberman Planet — ¿Son peligrosos los Dobermans?</a></li>
+          <li><a href="https://www.petmd.com/dog/breeds/doberman-pinscher" target="_blank" rel="noopener">PetMD — Doberman Pinscher Breed Health &amp; Care</a></li>
+          <li><a href="https://dpca.org/breed/breed-standard/" target="_blank" rel="noopener">Doberman Pinscher Club of America — Breed Standard</a></li>
+          <li><a href="https://vgl.ucdavis.edu/resources/dog-coat-color" target="_blank" rel="noopener">UC Davis Veterinary Genetics Laboratory — Dog Coat Color</a></li>
+          <li><a href="https://www.akc.org/expert-advice/dog-breeding/interpreting-doberman-pinscher-type-genetic-risk-factors-dilated-cardiomyopathy/" target="_blank" rel="noopener">American Kennel Club — Genetic Risk Factors for DCM in Dobermans</a></li>
+          <li><a href="https://www.dobermanplanet.com/difference-between-an-american-and-european-doberman/" target="_blank" rel="noopener">Doberman Planet — American vs. European Doberman</a></li>
+          <li><a href="https://www.dobermandiversityproject.org/whats-the-problem.html" target="_blank" rel="noopener">Doberman Diversity Project — What's the Problem?</a></li>
+        </ul>
+        <p class="foot-note">Contenido con fines informativos y educativos. Ante cualquier duda de salud o comportamiento de tu propio perro, consulta a un veterinario o etólogo canino certificado.</p>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<div class="photo-lightbox" id="photoLightbox" role="dialog" aria-modal="true" aria-label="Vista completa del Dobermann">
+  <button class="lightbox-close" id="lightboxClose" type="button" aria-label="Cerrar vista completa">✕</button>
+  <img id="lightboxImg" class="lightbox-img" src="" alt="Render 3D realista del Doberman en pantalla completa">
+  <div class="lightbox-hint">Toca fuera de la imagen para cerrar</div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
